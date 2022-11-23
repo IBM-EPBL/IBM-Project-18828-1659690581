@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Find Me</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
+
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    
+    <style>
+    #booking 
+    {
+	font-family: 'Lato', sans-serif;
+    background: url(../static/background.jpg);
+	background-size: cover;
+	background-position: center;
+	color: #191a1e;
+    }
+    </style>
+    
+	    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <div id="booking" class="section">
+        <div class="section-center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="booking-cta">
+                            <h1>Sign Up</h1>
+                            <p style="color:#fff">Let You Create An Account With Us.</p>
+                            <div class="container">
+                                <!-- {{ prediction_text }} -->
+                                {% if prediction_text == "0" %}
+                                <h2 style="color:#fff"> "Account Successfully Created" </h2>
+
+                                {% elif prediction_text == 1 %}
+                                <h2 style="color:#fff">" Sorry, The Flight Is Delayed "</h2>
+                                {% endif %}
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-md-offset-1">
+                        <div class="booking-form">
+                         <form class="form" method="post" action="/add_user">
+                           <div class="row">
+                              <div class="col-md-12">
+                                   <div class="form-group">
+                                       <span class="form-label">Name</span>
+                                           <input type="text" class="form-control" name="name" placeholder="Enter Your Name" required="true">
+                                       <span class="select-arrow"></span>
+                                   </div>
+                               </div>
+                            </div>
+                         <div class="row">
+                            <div class="col-md-12">
+                                 <div class="form-group">
+                                     <span class="form-label">Email</span>
+                                         <input type="email" class="form-control" name="email" placeholder="Enter Your Email" required="true">
+                                     <span class="select-arrow"></span>
+                                 </div>
+                             </div>
+                          </div>
+                            <div class="row">
+                              <div class="col-md-12">
+                                  <div class="form-group">
+                                      <span class="form-label">Password</span>
+                                          <input type="password" class="form-control" name="password" placeholder="Enter Your Password" required="true">
+                                      <span class="select-arrow"></span>
+                                  </div>
+                              </div>
+                          </div>    
+                              <div class="form-btn">
+                                  <button class="submit-btn">Sign Up</button>
+                              </div>
+                              <div class="form-btn">
+                                  <p class="mt-2"> Already a member? <a href="/login">Sign In</a> </p>
+                              </div>
+                                    
+                            </form>
+                            
+                        </div>
+                        <!Booking form>
+                       
+                    </div>
+
+                </div>
+            </div>
+   </div>
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <!-- ==== GSAP CDN ==== -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+   <!-- ==== SCRIPT.JS ==== -->
+   <script src="{{url_for('static', filename='script.js' )}}" defer></script>
+</body>
+
+</html>

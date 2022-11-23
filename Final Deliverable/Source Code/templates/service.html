@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+    <style> 
+    {
+	font-family: 'Lato', sans-serif;
+    background: url(../static/background1.jpg);
+	background-size: cover;
+	background-position: center;
+	color: #191a1e;
+    }
+    </style>
+
+    <!-- ==== STYLE.CSS ==== -->
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}" />
+
+    <!-- ====  REMIXICON CDN ==== -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!-- ==== ANIMATE ON SCROLL CSS CDN  ==== -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+      </head>
+  <body>
+    <!-- ==== HEADER ==== -->
+    <header class="container header">
+      <!-- ==== NAVBAR ==== -->
+      <nav class="nav">
+        <div class="logo">
+          <h2>Service</h2>
+        </div>
+
+        <div class="nav_menu" id="nav_menu">
+          <button class="close_btn" id="close_btn">
+            <i class="ri-close-fill"></i>
+          </button>
+
+          <ul class="nav_menu_list">
+            <li class="nav_menu_item">
+              <a href="/" class="nav_menu_link">Home</a>
+              
+            </li>
+            <li class="nav_menu_item">
+              <a href="/register" class="nav_menu_link">Sign Up</a>
+            </li>
+            <li class="nav_menu_item">
+              <a href="/login" class="nav_menu_link">Sign In</a>
+            </li>
+            <li class="nav_menu_item">
+              <a href="/about" class="nav_menu_link">About</a>
+            </li>
+          </ul>
+        </div>
+
+        <button class="toggle_btn" id="toggle_btn">
+          <i class="ri-menu-line"></i>
+        </button>
+      </nav>
+    </header>
+
+    <section class="wrapper">
+      <div class="container">
+        <div class="grid-cols-2">
+          <div class="grid-item-1">
+            <p class="info-text"; style="color:#000">We are providing the<p>
+            <h1 class="main-heading" >
+             <span> Flight Delay </span>Prediction</br> Service
+            </h1>
+            <p class="info-text">
+              Using Machine Learning
+            </p>
+
+            <div class="btn_wrapper">
+             <form action="https://github.com/IBM-EPBL/IBM-Project-18828-1659690581" method="get">
+               <button class="btn view_more_btn"  action="/login">
+                GitHub Repo
+               </button>
+              </form> 
+             
+            <form action="/" method="get">
+              <button type="submit" class="btn documentation_btn">Back</button>
+             </form> 
+            </div>
+          </div>
+          <div class="grid-item-2">
+            <div class="team_img_wrapper">
+              <img src="{{url_for('static', filename='img.jpg' )}}" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==== ANIMATE ON SCROLL JS CDN -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- ==== GSAP CDN ==== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <!-- ==== SCRIPT.JS ==== -->
+    <script src="{{url_for('static', filename='script.js' )}}" defer></script>
+  </body>
+</html>
